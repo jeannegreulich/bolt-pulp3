@@ -301,7 +301,7 @@ class Pulp3RpmRepoSlimmer
             'url'             => remote_url,
             'policy'          => 'on_demand',
             #'pulp_labels'    => pulp_labels,
-            #'tls_validation' => false,
+            'tls_validation' => false,
           }.merge( pulp_remote_options ).transform_keys(&:to_sym)
 
           rpm_rpm_remote = PulpRpmClient::RpmRpmRemote.new(remote_opts)

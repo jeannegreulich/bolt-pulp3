@@ -24,24 +24,6 @@
 #                   versions or obey `version:` constraints.  Make sure any
 #                   direct_url URLs are kept up to date with new releases!
 ---
-puppet:
-  url: http://yum.puppet.com/puppet6/el/8/x86_64/
-  pulp_remote_options:
-    policy: on_demand
-  # Versions last updated: 2021/07/21
-  rpms:
-  - name: puppet-agent
-    version: '= 6.22.1'
-  - name: puppet-bolt
-    version: '~> 3.13'
-  - name: puppet6-release
-  - name: puppetdb
-    version: '~> 6.16.1'
-  - name: puppetdb-termini
-    version: '~> 6.16.1'
-  - name: puppetserver
-    version: '~> 6.15.3'
-
 BaseOS:
   url: http://mirror.centos.org/centos/8/BaseOS/x86_64/os/
   rpms:
@@ -401,6 +383,7 @@ simp:
 #   - name: simp-ppolicy-check-password
 #   - name: simp-tpm12-simulator
 #   - name: simp-tpm2-simulator
+#   updated simp vendor
   - name: simp-vendored-r10k
   - name: simp-vendored-r10k-doc
   - name: simp-vendored-r10k-gem-colored2
@@ -546,3 +529,22 @@ simp:
   - name: simp-rsync-skeleton
   - name: simp-selinux-policy
   - name: simp-utils
+
+puppet:
+  url: http://yum.puppet.com/puppet6/el/8/x86_64/
+  pulp_remote_options:
+    policy: on_demand
+  # Versions last updated: 2021/07/21
+  rpms:
+  - name: puppet-agent
+    version: '= 6.22.1'
+  - name: puppet-bolt
+    version: '~> 3.13'
+  - name: puppet6-release
+  - name: puppetdb
+    version: '~> 6.16.1'
+  - name: puppetdb-termini
+    version: '~> 6.16.1'
+  - name: puppetserver
+    version: '~> 6.15.3'
+
